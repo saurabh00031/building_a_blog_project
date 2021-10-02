@@ -1,0 +1,47 @@
+{% extends 'blogApp/base.html' %}
+{% load static %}
+
+
+{% block content  %}
+
+
+<div class="container-fluid jumble-color mt-5">
+{% if messages %}
+{% for message in messages %}
+<p 
+{% if message.tags %} class="alert alert-{{message.tags}} mb-10"  {% endif %}>
+{{message}}
+</p>
+
+{% endfor %}
+{% endif %}
+</div>
+
+{% if not request.user.is_authenticated %}
+
+<div class="col-sm-10">
+<h3 class="text-white my-7">Home</h3>
+<div class="jumbotron jumbotron-fluid jumble-color">
+  <div class="container">
+   
+    <h2 class="display-4"><b>SS blog title</b></h2>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent\n hiii..lets learn more on it.</p>
+  </div>
+</div>
+{% else %}
+<div class="col-sm-10">
+<h3 class="text-white my-7">Home</h3>
+<div class="jumbotron jumbotron-fluid jumble-color">
+  <div class="container">
+   {% for post in posts %}
+    <h2 class="display-5"><b>{{post.title}}</b></h2>
+    <p class="lead mt-3 mb-5">{{post.desc}}</p>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endif %}
+</div>
+
+{% endblock content  %}

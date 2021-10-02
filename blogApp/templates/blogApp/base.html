@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<title>$$ blogZoneX </title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">  
+<link rel="stylesheet" href=" {% static 'blogApp/css/bootstrap.css' %}">
+<link rel="stylesheet" href=" {% static 'blogApp/css/style.css' %}">
+</head>
+<style>
+    
+    @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
+    </style>
+<body>
+
+<div class="container-fluid bg-dark ">
+{% include 'blogApp/navbar.html' %}
+</div>
+
+<h2 class="text-center alert alert-secondary">$$ blogZoneX-007</h2>
+
+
+<div class="container">
+
+<div class="row">
+<div class="col-sm-12">
+   {% block msg %}
+   {% endblock msg %}
+</div>
+</div>
+
+<div class="row">
+{% block side %}
+{% endblock side %}
+
+
+{% block content  %}
+{% endblock content  %}
+</div>
+
+</div>
+
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4 mt-5 jumblex-color">
+
+  <!-- Footer Elements -->
+  <div class="container-fluid">
+
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+      <li class="list-inline-item">
+        <a class="btn-floating btn-fb mx-3">
+          <i class="fab fa-facebook-f"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-tw mx-3">
+          <i class="fab fa-twitter"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-gplus mx-3">
+          <i class="fab fa-google-plus-g"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-li mx-3">
+          <i class="fab fa-linkedin-in"> </i>
+        </a>
+      </li>
+      <li class="list-inline-item">
+        <a class="btn-floating btn-dribbble mx-3">
+          <i class="fab fa-dribbble"> </i>
+        </a>
+      </li>
+    </ul>
+    <!-- Social buttons -->
+
+  </div>
+  <!-- Footer Elements -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="/"> </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+
+<script src="{% static 'blogApp/js/jquery.js' %}" ></script>
+<script src="{% static 'blogApp/js/popper.js' %}" ></script>
+<script src="{% static 'blogApp/js/bootstrap.js' %}" ></script>
+</body>
+
+</html>

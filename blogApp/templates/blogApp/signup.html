@@ -1,0 +1,41 @@
+{% extends 'blogApp/base.html' %}
+{% load static %}
+
+
+{% block content  %}
+<div class="col-sm-3">
+<h3 class="text-white my-7">Sign up section</h3>
+
+
+
+<div class="container-fluid jumble-color mt-5">
+{% if messages %}
+{% for message in messages %}
+<p 
+{% if message.tags %} class="alert alert-{{message.tags}} mb-10"  {% endif %}>
+{{message}}
+</p>
+
+{% endfor %}
+{% endif %}
+</div>
+</div>
+
+<form method="post" action="" novalidate>
+{% csrf_token %}
+{% for fm in form %}
+<div class="form-group">
+{{fm.label_tag}} {{fm}} 
+<small class="text-warning">{{fm.errors | striptags}}</small>
+</div>
+{% endfor %}
+<br>
+<input type="submit" class="btn btn-success" value="submit">
+{% if form.non_field_errors %}
+{% for error in form.non_field_errors %}
+<p class="alert alert-warning my-4">{{error}}</p>
+{% endfor %}
+{% endif %}
+</form>
+
+{% endblock content  %}
